@@ -1,0 +1,13 @@
+{
+    "icons": {
+        "search": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fsearch-100.png?alt=media&token=19c67f6b-b3f9-4bf0-a980-b088468201bc",
+        "plus": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fplus-math-90.png?alt=media&token=6d6af64d-4ff7-4acc-9118-e86dca6520c7",
+        "close": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fclose-90.png?alt=media&token=6ad9b3bd-68b0-4c8d-8c60-e8fb876ce785",
+        "login": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Flogin-90.png?alt=media&token=b69f568b-a4b0-4e76-85bc-67ffe1f45b76",
+        "edit": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fpencil-90.png?alt=media&token=97acf4bb-866e-4caf-b785-0b4fbbac8635",
+        "notification": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fgoogle-alerts-90.png?alt=media&token=8d7e2564-91ee-4bfe-8572-51ffc916eab1",
+        "turnon": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fturnon-90.png?alt=media&token=ec01420b-e964-4b20-bf67-37785b64685e",
+        "turnoff": "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fturnoff-90.png?alt=media&token=e99bdc72-7394-43aa-8f21-81f9d2fc60f3",
+        "delete" : "https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/jeissoncoder%2Fimages%2Ficons%2Fproducts%2Fremove-90.png?alt=media&token=8cd03ebc-fd30-4e8c-b04c-991d1f6518f5"
+    }
+}

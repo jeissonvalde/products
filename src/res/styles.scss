@@ -1,0 +1,26 @@
+@import "./vars.scss";
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: $font-p;
+}
+
+button {
+    background-color: rgb(224, 224, 224);
+    border: 0px solid rgb(179, 179, 179);
+    border-radius: 4px;
+    padding: 4px;
+    letter-spacing: .8px;
+
+    img {
+        position: relative;
+        top: 2px;
+    }
+}
+
+.m-left-auto {
+    margin-left: auto;
+}

@@ -1,8 +1,12 @@
-import { El } from './vite-env'
+import React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import { Home } from './pages/home'
+import './res/styles.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
-    const rootEl = document.getElementById('root') as El
-
-    rootEl.innerHTML = 'Hello world'
-    alert('Ready!')
+    ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+        <React.StrictMode>
+            <Home />
+        </React.StrictMode>,
+    )
 })
