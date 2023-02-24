@@ -1,0 +1,290 @@
+@import "../../../res/vars.scss";
+@import "./product-list-breakpoint.scss";
+
+.hpl-result {
+    margin: auto;
+}
+
+.hpl-product {
+    margin: auto auto 40px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 6px;
+    max-width: 600px;
+
+    will-change: background-color, max-height, margin, transform, max-width, box-shadow;
+    transition: background-color .4s, max-height 1s, margin 1s, transform 1s, max-width .8s, box-shadow .8s;
+    transition-delay: 0s, 2s, 2s, 0s, .4s, 1s;
+
+    .menu .hpl-product-state {
+        will-change: opacity;
+        transition: opacity .4s;
+        transform: scale(1) !important;
+        margin-right: auto !important;
+        color: rgb(66, 231, 66);
+        opacity: 0;
+        transition-delay: 4s !important;
+    }
+
+    form {
+        display: grid;
+        margin: 20px auto;
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin: 10px auto 8px;
+            z-index: 0;
+            width: 90%;
+            position: relative;
+
+            textarea,
+            input {
+                padding: 6px 12px;
+                border: 0;
+                border-radius: 4px;
+                border: 1px solid rgb(189, 189, 189);
+                background-color: rgb(250, 250, 250);
+                max-height: 100px;
+                font-size: 16px;
+                letter-spacing: .4px;
+                font-family: inherit;
+
+                &:focus-visible {
+                    outline: unset;
+                }
+                &::placeholder {
+                    color: rgb(167, 167, 167);
+                }
+            }
+
+            label {
+                font-size: 14px;
+                letter-spacing: 1px;
+                color: rgb(88, 88, 88);
+                line-height: 16px;
+                margin-bottom: 2px;
+                max-height: 100px;
+                opacity: 1;
+                font-family: inherit;
+            }
+        }
+    }
+}
+
+/* Animations */
+.hpl-product .field {
+    transition:
+        background-color .6s,
+        transform 1.4s,
+        margin .8s,
+        padding .8s,
+        max-height 1s,
+        opacity .2s;
+
+    transition-delay: 0s, 0s, 0s, 0s, 0s, 1s;
+    
+}
+.hpl-product textarea,
+.hpl-product input,
+.hpl-product form .field label {
+    will-change: background-color, transform, margin, padding, max-height, color, opacity;
+    transition:
+        background-color .6s,
+        transform 1.4s,
+        margin .8s,
+        padding .8s,
+        max-height 1s,
+        color .8s,
+        opacity .2s;
+    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 1s;
+    transform-origin: left top;
+}
+
+.hpl-product form .field.col-1-3 {
+    grid-column: 1 / 3;
+    width: 96%;
+}
+
+.hpl-product form .field.options {
+    max-height: 100px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mcdp-confirm-button,
+.prod-f-create-prod-button,
+.plpl-search-button,
+.prod-f-save-prod-button {
+    @include button($bg: $action-bg-p, $c: $action-color-p);
+
+    &:hover {
+        background-color: #8a4b59;
+    }
+}
+
+.prod-f-save-prod-button,
+.prod-f-cancel-prod-button {
+    width: 140px;
+    margin-left: 8px;
+}
+
+.mcdp-cancel-button,
+.prod-f-cancel-prod-button {
+    @include button($bg: rgb(206, 206, 206), $c: rgb(37, 37, 37));
+
+    &:hover {
+        background-color: rgb(218, 218, 218);
+    }
+}
+
+
+.hpl-product .field.menu {
+    display: flex;
+    flex-direction: row;
+    grid-column: 1 / 3;
+}
+
+.hpl-product .menu .pef-m-button {
+    background-color: rgb(212, 212, 212);
+    padding: 2px 6px;
+    margin-left: 6px;
+    border-radius: 4px;
+
+    img {
+        width: 20px;
+    }
+
+    &:nth-of-type(1) {
+        margin-left: auto;
+    }
+}
+
+.hpl-product.sample {
+    box-shadow: 3px 3px 8px rgba(26, 26, 26, 0.06);
+
+    form .field {
+        margin: 0 auto;
+        transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+
+        &.menu {
+            margin: 10px 10px auto auto;
+        }
+
+        &.options,
+        label {
+            transform: scale(0);
+            margin: 0;
+            max-height: 0px;
+            opacity: 0;
+        }
+
+        label {
+            transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+        }
+
+        textarea {
+            opacity: 0;
+            margin-bottom: 0px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        textarea,
+        input {
+            background-color: transparent;
+            border: 0px;
+            padding: 0px 0px 0px 10px;
+        }
+    }
+}
+
+
+.hpl-product.disabled {
+    background-color: rgb(29, 29, 29);
+
+    .menu .pef-m-button {
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+            display: none;
+        }
+        &:nth-of-type(2) {
+            background-color: rgb(75, 75, 75);
+            margin-right: 38px;
+    
+            color: red;
+            text-shadow: 0px 0px 15px red;
+        }
+    }
+
+    textarea,
+    input {
+        max-height: 0px !important;
+        opacity: 0;
+    }
+
+    .menu .hpl-product-state,
+    input[name="name"] {
+        opacity: 1;
+        max-height: 100px !important;
+        margin-bottom: 10px;
+        color: rgb(197, 197, 197) !important;
+    }
+
+    .menu .hpl-product-state {
+        opacity: 1;
+        color: red !important;
+        transition-delay: .8s !important;
+    }
+}
+
+.hpl-product.delete {
+    margin: auto auto 0px;
+    max-width: 200px;
+    // will-change: background-color, max-height, margin, transform, max-width, box-shadow;
+    box-shadow: 4px 6px 10px rgba(26, 26, 26, 0);
+    transition-delay: 1s, 1s, 1s, 0s, .8s, 1s !important;
+
+    .menu .hpl-product-state {
+        opacity: 1;
+        color: rgb(88, 88, 88);
+        transition-delay: .8s;
+        margin-left: 10px;
+    }
+
+    form {
+        .menu .pef-m-button,
+        textarea,
+        input {
+            opacity: 0;
+            margin: 0px;
+            max-height: 0px;
+
+            transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+        }
+    }
+}
+
+.price-symbol {
+    color: rgb(124, 124, 124);
+    position: absolute;
+    top: 0px;
+    left: -4px;
+    opacity: 0;
+
+    will-change: opacity;
+    transition: opacity .2s;
+    transition-delay: 0s;
+}
+
+.sample.disabled .price-symbol,
+.sample.delete .price-symbol {
+    opacity: 0;
+}
+
+.sample .price-symbol {
+    opacity: 1;
+    transition-delay: 1s;
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap');
+
+$purple: #561643;
+$choco-cosmos: #6C0E23;
+$fire-enigme: #C42021;
+$cream: #F3FFB9;
+$violet: #2a102e;
+$black: #191919;
+
+$action-bg-p: $choco-cosmos;
+$action-color-p: $cream;
+
+$font-p: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$font-title: 'Josefin Sans', sans-serif;;
+
+
+@mixin button($bg: rgb(224, 224, 224), $c: rgb(31, 31, 31)) {
+    background-color: $bg;
+    color: $c;
+    
+    border: 0px solid rgb(179, 179, 179);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: .8px;
+
+    will-change: background-color;
+    transition: background-color .4s;
+}

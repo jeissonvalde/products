@@ -1,0 +1,49 @@
+// Large
+@media (min-width: 992px) {
+    .hpl-result {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+
+        .hpl-product {
+            margin: 10px;
+        }
+    }
+}
+
+// Medium
+@media (min-width: 768px) and (max-width: 991.9px) {
+    .hpl-result {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+
+        .hpl-product {
+            margin: 10px;
+        }
+    }
+}
+
+// Small
+@media (min-width: 576px) and (max-width: 767.9px) {
+    .hpl-product {
+        width: 520px;
+
+        .hpl-product {
+            margin: 10px;
+        }
+
+        textarea {
+            max-width: 470px;
+            max-height: 102px;
+        }
+    }
+}
+
+// Extra small
+@media (max-width: 575px) {
+
+    .hpl-product {
+        margin: 10px;
+    }
+}

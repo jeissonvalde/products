@@ -1,4 +1,4 @@
 node_modules
-testing
+__test__
 .husky
 .git
