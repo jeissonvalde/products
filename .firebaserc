@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "portafolio-333717"
+    "default": "portafolio-333717",
+    "test": "product-33317"
   }
 }
