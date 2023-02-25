@@ -1,5 +1,5 @@
 import React from 'react'
-import { El, EvClick, EvLoad, ProductTS, SetState } from "../../../types"
+import { El, EvClick, EvClickLabel, ProductTS, SetState } from "../../../types"
 import images from '../../../res/images.json'
 
 export function clickOption (prodId: string, prodData: ProductTS, setSample: SetState, opt: string, e: EvClick) {
@@ -96,7 +96,7 @@ function deleteProduct (undelete: boolean, prodId: string) {
 }
 
 // Undelete. this message is showed after on delete.
-export function clickProductStateLabel (prodId: string, setSample: SetState, e: EvClick) {
+export function clickProductStateLabel (prodId: string, setSample: SetState, e: EvClickLabel) {
     e.preventDefault()
     const productEl = document.getElementById(prodId) as El
     if (productEl.classList.contains('delete')) {

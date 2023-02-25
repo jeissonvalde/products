@@ -14,6 +14,8 @@ export type HTMLAttr = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDiv
 
 export type EvLoad = SyntheticEvent<HTMLDivElement, Event>
 
+export type EvClickLabel = MouseEvent<HTMLElement>
+
 export type EvClick = MouseEvent<HTMLButtonElement>
 
 export type Inp = HTMLInputElement
