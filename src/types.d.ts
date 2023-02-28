@@ -1,4 +1,4 @@
-import { SyntheticEvent, MouseEvent, Dispatch, SetStateAction } from "react"
+import { SyntheticEvent, StyleHTMLAttributes, MouseEvent, Dispatch, SetStateAction } from "react"
 
 declare global {
     interface Document {
@@ -22,10 +22,13 @@ export type Inp = HTMLInputElement
 
 export type SetState = Dispatch<SetStateAction<any>>
 
+export type HTMLStyle = StyleHTMLAttributes
+
 export type ProductTS = {
     name: string,
     price: number,
     brand: string,
+    images: string[] | null,
     description: string,
     unavailable: boolean | null
 }

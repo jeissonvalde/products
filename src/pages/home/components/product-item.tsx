@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ProductArgs } from "../../../types"
+import { ProductArgs, HTMLStyle } from "../../../types"
 import { clickProductStateLabel, clickOption, clickCancelEditProduct, clickSaveChangesProduct } from '../controllers/product-list'
 import { HTMLAttr } from '../../../types'
 import images from '../../../res/images.json'
@@ -7,14 +7,15 @@ import images from '../../../res/images.json'
 
 export function Product (args: ProductArgs) {
     const [ productData, setData ] = useState(args.productData),
-        [ classNames, setSample ] = useState(args.productData == null ? '' : 'sample')
+        [ classNames, setSample ] = useState(args.productData == null ? '' : 'sample'),
+        [ intervalId, setIntervalId ] = useState(0)
 
     const {
         index,
         prodId
     } = args,
         style = {"--i": index} as HTMLAttr,
-        clickOptsMenu = clickOption.bind(null, prodId, productData, setSample)
+        clickOptsMenu = clickOption.bind(null, prodId, intervalId, productData, setSample)
     let OptionsTemp = <>
         <button className="prod-f-create-prod-button">Add</button>
         <button className="prod-f-close-create-prod-button">Cancel</button>
@@ -35,7 +36,7 @@ export function Product (args: ProductArgs) {
             <div
                 id={prodId}
                 className={`hpl-product ${classNames}`}
-                onClick={clickProductStateLabel.bind(null, prodId, setSample)}
+                onClick={clickProductStateLabel.bind(null, { prodId, setSample, setIntervalId, intervalId })}
                 style={style}>
 
                 <form>
@@ -50,6 +51,17 @@ export function Product (args: ProductArgs) {
                         <button
                             onClick={clickOptsMenu.bind(null, 'delete')}
                             data-option="delete" className="pef-m-button"><img src={images.icons.delete} /></button>
+                    </div>
+                    <div className="field images">
+                        {productData.images != null ? productData.images.map((imageSRC, index) => {
+
+                            // SEVERAL IGUAL ELEMENTS FOR not use --idx
+                            return (
+                                <div key={index} style={{"--ind": String(index)} as HTMLStyle} className="hpl-p prod-image">
+                                    <img src={imageSRC} />
+                                </div>
+                            )
+                        }) : ''}
                     </div>
                     <div className="field col-1-3">
                         <label>Name</label>

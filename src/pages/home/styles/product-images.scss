@@ -1,0 +1,64 @@
+
+.hpl-product {
+    form .field.images {
+        display: none;
+    }
+
+    form.play-images-anim {
+        .field.images {
+            display: block;
+            overflow: unset;
+            position: absolute !important;
+            top: 50px;
+            left: -20px;
+
+            // transition: background-color, transform, margin, padding, max-height, opacity;
+            transition-duration: .6s, 2.4s, .8s, .8s,  1s, .6s;
+            transition-delay: 0s, 0s, 0s, 0s, 0s, 1s !important;
+            transition-timing-function: cubic-bezier(0.13, 0.25, 0.1, 0.85);
+
+            .hpl-p.prod-image {
+                position: absolute;
+                bottom: 0px;
+                width: 160px;
+                background-color: var(--bg-color);
+                will-change: opacity;
+                opacity: 0;
+                animation: animImagesOfProduct 6s linear calc(var(--ind) * 6s) forwards;
+
+                img {
+                    width: 140px;
+                    position: relative;
+                    bottom: -10px;
+                    left: 15px;
+                }
+            }
+        }
+
+        transform: translateX(0%);
+        opacity: 1;
+        &.loading {
+            .field.images {
+                transition-duration: .6s, 2.4s, .8s, .8s,  1s, .2s;
+                transition-delay: 0s, .7s, 0s, 0s, 0s, 0s !important;
+                transform: translateX(150%);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@keyframes animImagesOfProduct {
+    from {
+        opacity: 0;
+    }
+    6% {
+        opacity: 1;
+    }
+    94% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

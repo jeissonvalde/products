@@ -1,11 +1,15 @@
-import React from 'react'
 import { El, EvClick, EvClickLabel, ProductTS, SetState } from "../../../types"
 import images from '../../../res/images.json'
+import { initProductImagesAnimation } from './product-image'
 
-export function clickOption (prodId: string, prodData: ProductTS, setSample: SetState, opt: string, e: EvClick) {
+export function clickOption (prodId: string, intervalId: number, prodData: ProductTS, setSample: SetState, opt: string, e: EvClick) {
     e.preventDefault()
     const prodEl = document.getElementById(prodId) as El,
         sample = prodEl.getAttribute('class') as string
+
+    // Clean animations
+    prodEl.querySelector<El>('form')?.classList.remove('play-images-anim')
+    window.clearInterval(intervalId)
 
     switch (opt) {
         case 'unavailable':
@@ -96,13 +100,47 @@ function deleteProduct (undelete: boolean, prodId: string) {
 }
 
 // Undelete. this message is showed after on delete.
-export function clickProductStateLabel (prodId: string, setSample: SetState, e: EvClickLabel) {
+type StateLabel = {
+    prodId: string,
+    setSample: SetState,
+    setIntervalId: SetState,
+    intervalId: number
+}
+export function clickProductStateLabel (args: StateLabel, e: EvClickLabel) {
     e.preventDefault()
-    const productEl = document.getElementById(prodId) as El
+    const {
+        prodId,
+        setSample,
+        setIntervalId,
+        intervalId
+    } = args
+
+    const productEl = document.getElementById(prodId) as El,
+        target = e.target as El
+
     if (productEl.classList.contains('delete')) {
 
         setSample('sample')
         deleteProduct(true, prodId)
+    }
+
+
+    if (productEl) {
+        const classList = productEl.getAttribute('class') as string,
+            tagName = target.tagName
+        if (
+            /disabled|deleted/.test(classList) == false 
+            && /sample$/.test(classList.replace(/\s/g, ''))
+            && /BUTTON|IMG/.test(tagName) == false
+        ) {
+            if (productEl.querySelector('form')?.classList.contains('play-images-anim')) {
+                productEl.querySelector('form')?.classList.remove('play-images-anim')
+                window.clearInterval(intervalId)
+            } else {
+                // productEl.querySelector('form')?.classList.add('play-images-anim')
+                initProductImagesAnimation(prodId, setIntervalId)
+            }
+        }
     }
 }
 

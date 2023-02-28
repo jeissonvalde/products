@@ -1,5 +1,6 @@
 @import "../../../res/vars.scss";
 @import "./product-list-breakpoint.scss";
+@import "./product-images.scss";
 
 .hpl-result {
     margin: auto;
@@ -79,14 +80,8 @@
 
 /* Animations */
 .hpl-product .field {
-    transition:
-        background-color .6s,
-        transform 1.4s,
-        margin .8s,
-        padding .8s,
-        max-height 1s,
-        opacity .2s;
-
+    transition: background-color, transform, margin, padding, max-height, opacity;
+    transition-duration: .6s, 1.4s, .8s, .8s,  1s,  .2s;
     transition-delay: 0s, 0s, 0s, 0s, 0s, 1s;
     
 }
