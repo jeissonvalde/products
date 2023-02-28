@@ -11,3 +11,7 @@ This page aims to provide the user with a way to manipulate products. You get to
         * Lint
 
 By clicking on the product element, an animation of images will be displayed so that the product administrator can identify the product accurately
+
+
+You can see the website under development here:
+https://jeissoncoder.com
