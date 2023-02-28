@@ -10,3 +10,4 @@ This page aims to provide the user with a way to manipulate products. You get to
         * Jest + husky
         * Lint
 
+By clicking on the product element, an animation of images will be displayed so that the product administrator can identify the product accurately
