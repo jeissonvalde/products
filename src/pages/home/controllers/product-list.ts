@@ -1,4 +1,4 @@
-import { El, EvClick, EvClickLabel, ProductTS, SetState } from "../../../types"
+import { El, EvClick, EvClickLabel, ProductTS, SetState } from '../../../types'
 import images from '../../../res/images.json'
 import { initProductImagesAnimation } from './product-image'
 
@@ -73,14 +73,14 @@ function disableProduct (val: boolean, prodId: string) {
     if (val) {
         const label = productEl.querySelector('label.hpl-product-state') as El
         label.innerHTML = 'Not available'
-        const button = productEl.querySelector('button[data-option="unavailable"] img')
+        const button = productEl.querySelector(`button[data-option='unavailable'] img`)
         button?.setAttribute('src', images.icons.turnon)
         return;
     }
 
     const label = productEl.querySelector('label.hpl-product-state') as El
     label.innerHTML = 'Available'
-    const button = productEl.querySelector('button[data-option="unavailable"] img')
+    const button = productEl.querySelector(`button[data-option='unavailable'] img`)
     button?.setAttribute('src', images.icons.turnoff)
 }
 

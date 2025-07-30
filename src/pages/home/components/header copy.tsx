@@ -1,13 +1,13 @@
 import images from '../../../res/images.json'
-import { clickOpenMenu } from '../controllers/header'
+import { events } from '../controllers/header'
 import '../styles/header.scss'
 
 export function Header () {
     const links = [
         {
-            clickEvent: clickOpenMenu,
             w: '28',
             h: '28',
+            id: 'close-side-nav-button',
             alt: 'delete-sign',
             imageURL: 'https://img.icons8.com/ios-glyphs/60/000000/delete-sign.png',
         },
@@ -25,40 +25,38 @@ export function Header () {
         },
     ]
     // Recommended use set_event_store
-    // events()
+    events()
 
-    return (
-        <div className='home-header'>
-            <div className='hh-title'>
-                <label>Admin | Products</label>
+    return `
+        <div class='home-header'>
+            <div class='hh-title'>
+                <label>${'Admin | Products'}</label>
             </div>
             <div
-                className='hh-o-open-menu-button'
-                onClick={clickOpenMenu}>
+                class='hh-o-open-menu-button'>
                 <img
                     width={'28'}
                     height={'28'}
                     src={'https://img.icons8.com/ios-filled/100/000000/menu--v1.png'}
                     alt='menu--v1'/>
             </div>
-            <div className='hh-options-container'>
-                <div className='hh-options-layer'>
-                    <ul className='hh-options'>
+            <div class='hh-options-container'>
+                <div class='hh-options-layer'>
+                    <ul class='hh-options'>
                         {links.map((link_data, ind) => {
                             let ind_data = String(ind)
 
                             return (
                                 <li
                                     key={ind}
-                                    onClick={link_data.clickEvent || null}
                                     style={{'--l-ind': ind_data}}>
-                                        <img
-                                            src={link_data.imageURL} /></li>
+                                    <img
+                                        src={link_data.imageURL} /></li>
                             )
                         })}
                     </ul>
                 </div>
             </div>
         </div>
-    )
+    `
 }

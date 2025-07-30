@@ -17,15 +17,15 @@ export function Product (args: ProductArgs) {
         style = {"--i": index} as HTMLAttr,
         clickOptsMenu = clickOption.bind(null, prodId, intervalId, productData, setSample)
     let OptionsTemp = <>
-        <button className="prod-f-create-prod-button">Add</button>
         <button className="prod-f-close-create-prod-button">Cancel</button>
+        <button className="prod-f-create-prod-button">Add</button>
     </>
 
     // Hidden options
     if (productData != null) {
         OptionsTemp = <>
-            <button onClick={clickSaveChangesProduct.bind(null, prodId, setSample, setData)} className="prod-f-save-prod-button">Save</button>
             <button onClick={clickCancelEditProduct.bind(null, productData, setSample, setData)} className="prod-f-cancel-prod-button">Cancel</button>
+            <button onClick={clickSaveChangesProduct.bind(null, prodId, setSample, setData)} className="prod-f-save-prod-button">Save</button>
         </>
         useEffect(() => { /* here can go a toast to let the user know */ }, [ classNames, productData ])
     }

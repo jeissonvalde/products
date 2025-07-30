@@ -1,6 +1,6 @@
-@import "../../../res/vars.scss";
-@import "./product-list-breakpoint.scss";
-@import "./product-images.scss";
+@import '../../../res/vars.scss';
+@import './product-list-breakpoint.scss';
+@import './product-images.scss';
 
 .hpl-result {
     margin: auto;
@@ -233,7 +233,7 @@
     }
 
     .menu .hpl-product-state,
-    input[name="name"] {
+    input[name='name'] {
         opacity: 1;
         max-height: 100px !important;
         margin-bottom: 10px;

@@ -1,0 +1,97 @@
+@import '../../../../res/vars.scss';
+@import './menu-breakpoints.scss';
+
+$button-color: rgb(224, 224, 224);
+
+.hh-o-open-menu-button {
+    $m_button_dim: 35px;
+    background-color: $button-color;
+    border-radius: 4px;
+    width: $m_button_dim;
+    height: $m_button_dim;
+    margin-left: auto;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hh-options-container {
+    z-index: 4;
+    background-color: transparent;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+
+    // Anims
+    will-change: background-color, position, max-width, max-height;
+    transition-property: background-color, position, max-width, max-height;
+    transition-duration: .6s, 0s, 0s, 0s;
+    transition-timing-function: linear;
+    transition-delay: .2s, 0s, 1s, 1s;
+}
+
+.hh-options-layer {
+    height: 100%;
+    width: 100%;
+
+    transform: translateX(0%);
+
+    // Anims
+    will-change: transform;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.14, 0.67, 0.43, 0.93);
+    transition-duration: .6s;
+    transition-delay: 0s;
+}
+
+.hh-options {
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+    list-style: none;
+    margin: 0px;
+
+    li {
+        border: 0px;
+        padding: 2px 10px 2px;
+        background-color: $button-color;
+        display: flex;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+
+        &:nth-of-type(1) {
+            background-color: transparent;
+        }
+        &:nth-last-of-type(1) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+// Actived
+.open-menu {
+    .hh-options-container {
+        background-color: rgba(0, 0, 0, 0.46);
+        max-width: 100%;
+        max-height: 100%;
+        transition-delay: .4s, 0s, 0s, 0s;
+
+        .hh-options-layer {
+            transform: translateX(-100%);
+            transition-delay: .2s;
+            .hh-options {
+
+                li {
+                    transform: translateY(0px);
+                    opacity: 1;
+                    transition-delay: calc(var(--l-ind) * .4s);
+                }
+            }
+        }
+    }
+}

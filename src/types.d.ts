@@ -1,4 +1,4 @@
-import { SyntheticEvent, StyleHTMLAttributes, MouseEvent, Dispatch, SetStateAction } from "react"
+import { SyntheticEvent, StyleHTMLAttributes, MouseEvent, Dispatch, SetStateAction } from 'react'
 
 declare global {
     interface Document {

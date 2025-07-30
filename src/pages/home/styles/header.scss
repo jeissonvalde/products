@@ -1,9 +1,11 @@
 @import "../../../res/vars.scss";
+@import "./header/menu.scss";
 
 
 .home-header {
     background-color: $choco-cosmos;
     width: 100%;
+    padding-bottom: 10px;
 }
 
 .hh-title {
@@ -19,18 +21,9 @@
 }
 
 .hh-options {
-    display: flex;
-    padding: 10px;
 }
 
-.hh-options button {
-    padding: 2px;
+.hh-options li {
 
-    &:nth-of-type(2) {
-        margin-left: 10px;
-    }
-}
-
-.hh-options button img {
-    width: 28px;
+    
 }
